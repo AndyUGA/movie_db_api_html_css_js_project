@@ -1,0 +1,8 @@
+
+.movie_img_rounded {
+    border-radius: 3rem;
+}
+
+body, .card {
+    background-color: #032541;
+}
