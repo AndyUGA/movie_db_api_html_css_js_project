@@ -4,46 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Trending API</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Trending Movies and TV Shows</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-5 text-center text-white">Trending Movies and TV Shows</h1>
-        <div class="row" id="movies"></div>
-    </div>
+    <h1>Trending Movies and TV Shows</h1>
+    <div class="container" id="movies"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const apiUrl = "https://api.themoviedb.org/3/trending/all/week?api_key={{your_api_key_here}}";
-
-        async function fetchMovies() {
-            try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                const moviesContainer = document.getElementById("movies");
-                data.results.forEach(movie => {
-                    const movieCard = document.createElement("div");
-                    movieCard.className = "col-md-3 mb-4";
-                    movieCard.innerHTML = `
-                        <div class="card border-0 ">
-                            <img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" class="movie_img_rounded" alt="Movie Poster">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-white">${movie.title || movie.name}</h5>
-                            </div>
-                        </div>
-                    `;
-                    moviesContainer.appendChild(movieCard);
-                });
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-
-        fetchMovies();
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
