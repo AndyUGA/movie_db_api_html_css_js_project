@@ -4,6 +4,11 @@ body {
     text-align: center;
     color: white;
     font-size: 32px;
+    background-color: #032541;
+}
+
+.card {
+    background-color: #032541;
 }
 #movies {
     display: flex;
@@ -25,8 +30,4 @@ body {
 
 .movie_img_rounded {
     border-radius: 3rem;
-}
-
-body, .card {
-    background-color: #032541;
 }

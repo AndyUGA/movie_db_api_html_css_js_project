@@ -1,4 +1,6 @@
-const apiUrl = "https://api.themoviedb.org/3/trending/all/week?api_key=c5cf12ec677e4a8152e9957bb30d8edd";
+// Use your own MovieDB API Key below
+// const apiKey = {{your_movie_db_api_key_here}};
+const apiUrl = `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}`;
 const moviesContainer = document.getElementById("movies");
 
 async function fetchMovies() {
@@ -17,11 +19,13 @@ async function fetchMovies() {
 
 function createMovieCard(media) {
     const { title, name, backdrop_path } = media;
+
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie_item")
+
     movieCard.innerHTML = `
-        <img src="https://image.tmdb.org/t/p/w500/${backdrop_path}" class="movie_img_rounded" alt="Movie Poster">
-        <div class = "title" >${title || name}</div>
+        <img src="https://image.tmdb.org/t/p/w500/${backdrop_path}" class="movie_img_rounded">
+        <div class = "title">${title || name}</div>
     `;
     return movieCard;
 }
