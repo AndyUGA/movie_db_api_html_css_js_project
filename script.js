@@ -1,5 +1,8 @@
+// Watch my Movie Database API Project Tutorial video here: https://youtu.be/hOeR3LB9NJY - The Movie Database API Project Tutorial using HTML, CSS, and JavaScript
+
+
 // Use your own MovieDB API Key below
-// const apiKey = {{your_movie_db_api_key_here}};
+const apiKey = {{ your_movie_db_api_key_here }};
 const apiUrl = `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}`;
 const moviesContainer = document.getElementById("movies");
 
