@@ -9,25 +9,24 @@ const moviesContainer = document.getElementById("movies");
 
 // Asynchronous function to fetch movies or TV shows from the API
 async function fetchMovies() {
-    try {
-        // Fetch data from the API
-        const response = await fetch(apiUrl);
 
-        // Parse the response JSON into a JavaScript object
-        const data = await response.json();
+    // Fetch data from the API
+    const response = await fetch(apiUrl);
 
-        // Iterate through each item (movie or TV show) in the results array
-        data.results.forEach(media => {
-            // Create a movie card for the current item
-            const movieCard = createMovieCard(media);
+    // Parse the response JSON into a JavaScript object
+    const data = await response.json();
 
-            // Append the movie card to the container in the DOM
-            moviesContainer.appendChild(movieCard);
-        });
-    } catch (error) {
-        // Log any errors that occur during the fetch process
-        console.error("Error fetching data:", error);
-    }
+    console.log(data);
+
+    // Iterate through each item (movie or TV show) in the results array
+    data.results.forEach(media => {
+        // Create a movie card for the current item
+        const movieCard = createMovieCard(media);
+
+        // Append the movie card to the container in the DOM
+        moviesContainer.appendChild(movieCard);
+    });
+
 }
 
 // Function to create a card element for a movie or TV show
